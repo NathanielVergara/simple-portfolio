@@ -1,0 +1,100 @@
+/* Container and overall alignment */
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Main title styling */
+
+.main-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #4A90E2;
+    /* Soft blue for a calming effect */
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+}
+
+
+/* Styling for the button */
+
+.btn-primary {
+    background-color: #2575fc;
+    /* A vibrant blue color */
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #6a11cb;
+    /* Purple on hover */
+}
+
+
+/* Account Section */
+
+.account-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.account-label {
+    color: #333;
+    font-size: 20px;
+}
+
+.account-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.account-input:focus {
+    border-color: #2575fc;
+    /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+}
+
+
+/* Content Section (where Router Outlet will display components) */
+
+.content-wrapper {
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design - Ensure the content looks good on smaller screens */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+    .account-input {
+        font-size: 16px;
+    }
+}

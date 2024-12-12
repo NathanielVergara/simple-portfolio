@@ -1,0 +1,13 @@
+<div class="container d-flex flex-column align-items-center justify-content-center">
+
+    <h1 class="main-title">{{ title }}</h1>
+
+    <button class="btn btn-primary btn-lg" (click)="executeHelloWorld()">Say Hello</button>
+    <div class="account-section">
+        <span class="account-label fs-4 fw-semibold">Account: {{ account$ | async }}</span>
+        <input type="text" class="account-input form-control mt-3" (input)="modifyAccount($event)" placeholder="Modify Account" />
+
+    </div>
+
+
+</div>

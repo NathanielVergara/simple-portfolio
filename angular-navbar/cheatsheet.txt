@@ -1,0 +1,3 @@
+ng generate module /modulename --routing
+ng generate component /componentname
+ng generate service /service/name
