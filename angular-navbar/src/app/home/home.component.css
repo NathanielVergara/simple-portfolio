@@ -1,88 +1,257 @@
-/* home.component.css */
+/* General body styling */
+
+body {
+    background-color: #f4f7fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
 
 
-/* Basic page layout */
+/* Main container for overall layout */
 
 .home {
+    padding: 40px 20px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    /* Gradient background */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Modern font */
 }
 
 
-/* Centering content box */
+/* Content box */
 
 .content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Headings */
+
+.heading {
+    font-size: 2.8em;
+    color: #2e3a59;
+    font-weight: bold;
     text-align: center;
-    width: 80%;
-    max-width: 600px;
-}
-
-
-/* Title styling */
-
-h1 {
-    color: #333;
-    font-size: 36px;
     margin-bottom: 20px;
-    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 
-/* Name styling */
+/* Paragraphs */
 
-.name {
-    font-size: 20px;
-    margin: 10px 0;
+.info p {
+    font-size: 1.1em;
     color: #555;
-    font-weight: 500;
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.info strong {
+    color: #00796b;
+    font-weight: bold;
 }
 
 
-/* Address styling */
+/* Conditional Content Styling */
 
-.address {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
+.conditional-content {
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #0d47a1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+.conditional-content:hover {
+    background-color: #d0f0ff;
 }
 
 
-/* Add a subtle hover effect to the text */
+/* Items List */
 
-.name:hover,
-.address:hover {
-    color: #2575fc;
+.items-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.items-list li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.items-list li:before {
+    content: '\2713';
+    /* Checkmark icon */
+    font-size: 1.4em;
+    color: #00796b;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* Child Component Message */
+
+.message-from-child {
+    background-color: #e8f5e9;
+    color: #388e3c;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Form Section */
+
+.form-container {
+    margin-top: 30px;
+}
+
+.form-container h3 {
+    text-align: center;
+    font-size: 2em;
+    color: #2e3a59;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+/* Form Field Styling */
+
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f9fbe7;
+    border: 1px solid #c5e1a5;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mat-form-field:hover,
+.mat-form-field:focus-within {
+    background-color: #f1f8e9;
+    border-color: #81c784;
+}
+
+.mat-label {
+    font-size: 1em;
+    color: #333;
+}
+
+.mat-error {
+    color: #e53935;
+    font-size: 0.9em;
+}
+
+
+/* Buttons */
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b;
+    color: #ffffff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
     cursor: pointer;
-    transition: color 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+    background-color: #b2dfdb;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 
-/* Optional: Add a small animation to the container */
+/* Success Message */
 
-.content {
-    animation: fadeIn 1.5s ease-in-out;
+.submission-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #2e7d32;
+    text-align: center;
+    background-color: #e0f2f1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 
-/* Fade in animation */
+/* Responsive Design */
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .heading {
+        font-size: 2em;
+    }
+    .form-container h3 {
+        font-size: 1.5em;
+    }
+    button {
+        padding: 10px;
+        font-size: 1em;
+    }
+    .conditional-content {
+        font-size: 1em;
+    }
+    .info p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.8em;
+    }
+    .form-container h3 {
+        font-size: 1.3em;
+    }
+    .items-list li {
+        font-size: 1em;
+    }
+    button {
+        font-size: 0.9em;
     }
 }

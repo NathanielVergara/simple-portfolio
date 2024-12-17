@@ -1,8 +1,65 @@
-<!-- home.component.html -->
 <div class="home">
     <div class="content">
-        <h1>Welcome to My Home Page</h1>
-        <p class="name"><strong>Name:</strong> Nathaniel Angelo D. Vergara</p>
-        <p class="address"><strong>Address:</strong> San Isidro Village, City of San Fernando, Pampanga</p>
+        <h1 class="heading">Welcome to My Home Page</h1>
+
+        <!-- Display Name and Address -->
+        <div class="info">
+            <p><strong>Name:</strong> {{ name | uppercase }}</p>
+            <p><strong>Address:</strong> {{ address | uppercase }}</p>
+        </div>
+
+        <!-- Conditionally Show Content -->
+        <div *ngIf="showContent" class="conditional-content">
+            <p>This content is conditionally displayed using NgIf.</p>
+        </div>
+
+        <!-- Display Contact Form Data -->
+        <div class="items-list">
+            <h3>Items List:</h3>
+            <ul>
+                <li *ngFor="let item of items">{{ item }}</li>
+                <!-- Using NgFor to iterate over the items array -->
+            </ul>
+        </div>
+
+        <button (click)="removeItem()">TEST</button>
+
+        <!-- Message from DummyComponent -->
+        <div *ngIf="messageFromChild" class="message-from-child">
+            <p><strong>Message from Child:</strong> {{ messageFromChild }}</p>
+        </div>
+
+        <!-- Pass Data to DummyComponent -->
+        <app-dummy [data]="name" (action)="receiveMessageFromChild($event)"></app-dummy>
+
+        <!-- Contact Form -->
+        <div class="form-container">
+            <h3>Contact Form</h3>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="Enter your first name" />
+                    <mat-error *ngIf="isControlInvalid('firstName')">First name is required and should be at least 3 characters.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Enter your last name" />
+                    <mat-error *ngIf="isControlInvalid('lastName')">Last name is required and should be at least 3 characters.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Enter your email address" />
+                    <mat-error *ngIf="isControlInvalid('email')">Please enter a valid email.</mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Submit</button>
+            </form>
+
+            <div *ngIf="formSubmitted" class="submission-message">
+                <p>{{ submissionMessage }}</p>
+            </div>
+        </div>
     </div>
 </div>

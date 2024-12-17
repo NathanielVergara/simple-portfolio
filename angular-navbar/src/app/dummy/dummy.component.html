@@ -1,1 +1,9 @@
-<p>dummy works!</p>
+<div>
+    <p><strong>Received Data from Parent:</strong> {{ data }}</p>
+
+    <!-- Dummy component works message -->
+    <p>dummy works!</p>
+
+    <!-- Button to trigger the event to parent -->
+    <button (click)="sendMessageToParent()">Send Message to Parent</button>
+</div>

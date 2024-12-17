@@ -64,12 +64,8 @@
 
 .account-input:focus {
     border-color: #2575fc;
-    /* Blue border on focus */
     box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
 }
-
-
-/* Content Section (where Router Outlet will display components) */
 
 .content-wrapper {
     background-color: #f9f9f9;
@@ -78,9 +74,6 @@
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-/* Responsive Design - Ensure the content looks good on smaller screens */
 
 @media (max-width: 768px) {
     .container {
